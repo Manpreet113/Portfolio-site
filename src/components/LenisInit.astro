@@ -1,0 +1,14 @@
+---
+// Component to initialize Lenis on the client side
+---
+
+<script>
+  import initializeLenis from '../scripts/lenis-init.js';
+  
+  // Initialize Lenis when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLenis);
+  } else {
+    initializeLenis();
+  }
+</script>

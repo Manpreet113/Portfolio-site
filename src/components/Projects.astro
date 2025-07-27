@@ -1,0 +1,235 @@
+---
+const projects = [
+  {
+    id: "hyprl",
+    title: "HyprL",
+    subtitle: "Automated Arch Linux Environment",
+    description: "A comprehensive one-command Hyprland desktop installation script that transforms Arch Linux into a beautiful, functional desktop environment. Features automated hardware detection, theme selection, and beginner-friendly setup process.",
+    longDescription: "HyprL revolutionizes the Arch Linux setup experience by providing a single command that installs and configures a complete Hyprland desktop environment. With over 2.9k GitHub stars, it features intelligent hardware detection, customizable themes, and a beginner-friendly approach to advanced Linux desktop configuration.",
+    impact: "2.9k+ GitHub Stars • 500+ Installations • Featured in Linux Communities",
+    tech: ["Shell Scripting (Bash)", "Linux", "Hardware Detection", "Astro", "Tailwind CSS", "Git"],
+    links: {
+      github: "https://github.com/Manpreet113/hyprL",
+      docs: "https://hyprl-docs.vercel.app/"
+    },
+    icon: "🐧",
+    gradient: "from-blue-500 to-purple-600",
+    featured: true
+  },
+  {
+    id: "notehole",
+    title: "NoteHole",
+    subtitle: "Secure Note-Taking App",
+    description: "A full-stack Progressive Web App designed for personal knowledge management with real-time synchronization, secure authentication, and intuitive user interface.",
+    longDescription: "NoteHole combines the power of modern web technologies to create a seamless note-taking experience. Built with React and Supabase, it offers real-time synchronization across devices, secure user authentication, and an intuitive interface that makes organizing thoughts effortless.",
+    impact: "Real-time Sync • Secure Authentication • PWA Technology",
+    tech: ["React", "Supabase", "Zustand", "Tailwind CSS", "PWA", "Vercel"],
+    links: {
+      github: "https://github.com/Manpreet113/NoteHole",
+      live: "https://notehole.vercel.app/"
+    },
+    icon: "📝",
+    gradient: "from-green-500 to-teal-600"
+  },
+  {
+    id: "notbot",
+    title: "NotBot",
+    subtitle: "AI-Assisted Discord Bot",
+    description: "A comprehensive Discord bot featuring advanced moderation tools, ticket management system, music playback, and integrated AI assistant.",
+    longDescription: "NotBot showcases advanced Discord.js integration with AI-powered features. It handles complex server moderation, manages support tickets, provides music streaming capabilities, and integrates AI assistance for enhanced user interactions, demonstrating scalable real-time event handling.",
+    impact: "Multi-Server Deployment • AI Integration • Real-time Processing",
+    tech: ["Node.js", "Discord.js", "AI Integration", "API Management", "Real-time Events"],
+    links: {
+      github: "https://github.com/Manpreet113/hyprl-bot"
+    },
+    icon: "🤖",
+    gradient: "from-purple-500 to-pink-600"
+  }
+];
+---
+
+<!-- Scroll-based Project Showcase -->
+<section id="projects" class="relative">
+  <!-- Introduction Section -->
+  <div class="py-24 bg-gradient-to-b from-muted to-background">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 text-primary animate-gradient">Featured Work</h2>
+      <div class="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8 animate-gradient"></div>
+      <p class="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+        Three projects that showcase my passion for solving complex problems through elegant code.
+      </p>
+      <div class="text-sm text-muted-foreground uppercase tracking-wider">
+        Scroll to explore each project
+      </div>
+    </div>
+  </div>
+
+  <!-- Individual Project Sections -->
+  {projects.map((project, index) => (
+    <div 
+      id={`project-${project.id}`}
+      class="project-section min-h-screen flex items-center relative overflow-hidden"
+      data-project-index={index}
+    >
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}></div>
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%)"></div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 blur-xl animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-accent/10 to-secondary/10 blur-xl animate-float-delayed"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <!-- Project Info -->
+        <div class="project-content space-y-8">
+          <!-- Project Header -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <div class={`w-16 h-16 rounded-2xl bg-gradient-to-r ${project.gradient} flex items-center justify-center text-3xl shadow-2xl animate-breathe`}>
+                {project.icon}
+              </div>
+              {project.featured && (
+                <span class="px-3 py-1 bg-gradient-to-r from-accent to-primary text-white text-sm font-bold rounded-full animate-pulse">
+                  ✨ Featured
+                </span>
+              )}
+            </div>
+            
+            <div>
+              <h3 class="text-4xl md:text-6xl font-bold text-primary mb-2 animate-gradient">
+                {project.title}
+              </h3>
+              <p class="text-xl md:text-2xl text-accent font-semibold">
+                {project.subtitle}
+              </p>
+            </div>
+          </div>
+          
+          <!-- Impact Stats -->
+          <div class="p-4 glassmorphism rounded-2xl glassmorphism-hover">
+            <p class="text-sm text-muted-foreground font-semibold uppercase tracking-wider mb-2">Impact & Reach</p>
+            <p class="text-lg text-foreground font-medium">{project.impact}</p>
+          </div>
+          
+          <!-- Description -->
+          <div class="space-y-4">
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              {project.longDescription}
+            </p>
+          </div>
+          
+          <!-- Tech Stack -->
+          <div class="space-y-4">
+            <h4 class="text-lg font-semibold text-foreground">Technologies Used</h4>
+            <div class="flex flex-wrap gap-3">
+              {project.tech.map((tech, techIndex) => (
+                <span 
+                  class={`px-4 py-2 bg-gradient-to-r ${project.gradient} text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in`}
+                  style={`animation-delay: ${techIndex * 100}ms`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a 
+              href={project.links.github}
+              target="_blank"
+              rel="noopener"
+              class="group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-2xl glassmorphism-hover transition-all duration-300 font-semibold shadow-lg hover:shadow-xl morph-button magnetic"
+            >
+              <svg class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View Code
+            </a>
+            
+            {project.links.live && (
+              <a 
+                href={project.links.live}
+                target="_blank"
+                rel="noopener"
+                class={`group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-2xl glassmorphism-hover transition-all duration-300 font-semibold shadow-lg morph-button magnetic`}
+              >
+                <svg class="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Live Demo
+              </a>
+            )}
+            
+            {project.links.docs && (
+              <a 
+                href={project.links.docs}
+                target="_blank"
+                rel="noopener"
+                class="group inline-flex items-center px-6 py-3 glassmorphism border-2 border-primary/30 text-foreground glassmorphism-hover rounded-2xl transition-all duration-300 font-semibold magnetic"
+              >
+                <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Documentation
+              </a>
+            )}
+          </div>
+        </div>
+        
+        <!-- Visual Element -->
+        <div class="project-visual relative">
+          <div class="relative group">
+            <!-- Main Visual Container -->
+            <div class={`aspect-square rounded-3xl glassmorphism p-8 shadow-2xl group-hover:shadow-3xl transition-all duration-500 hover:scale-105 premium-hover glassmorphism-hover`}>
+              <div class="w-full h-full glassmorphism rounded-2xl flex items-center justify-center">
+                <div class="text-8xl md:text-9xl opacity-80 animate-float">{project.icon}</div>
+              </div>
+            </div>
+            
+            <!-- Floating Tech Icons -->
+            <div class="absolute -top-4 -right-4 w-16 h-16 glassmorphism rounded-2xl shadow-lg flex items-center justify-center text-2xl animate-bounce glassmorphism-hover" style="animation-delay: 0.5s">
+              {project.tech[0] === 'React' ? '⚛️' : project.tech[0] === 'Shell Scripting (Bash)' ? '🔧' : '🚀'}
+            </div>
+            <div class="absolute -bottom-4 -left-4 w-14 h-14 glassmorphism rounded-xl shadow-lg flex items-center justify-center text-xl animate-bounce glassmorphism-hover" style="animation-delay: 1s">
+              {project.tech.includes('PWA') ? '📱' : project.tech.includes('Linux') ? '🐧' : '🎯'}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      {index < projects.length - 1 && (
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div class="animate-bounce">
+            <svg class="w-6 h-6 text-primary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+            <p class="text-sm text-muted-foreground">Next Project</p>
+          </div>
+        </div>
+      )}
+    </div>
+  ))}
+  
+  <!-- Final CTA Section -->
+  <div class="py-24 bg-gradient-to-b from-background to-muted text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-4xl md:text-5xl font-bold mb-6 text-primary animate-gradient">Ready to Build Something Amazing?</h3>
+      <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+        These projects represent just the beginning. Let's collaborate and create something extraordinary together.
+      </p>
+      <a 
+        href="#contact" 
+        class="inline-flex items-center px-10 py-5 glassmorphism text-foreground font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 morph-button premium-hover glassmorphism-hover text-lg"
+      >
+        Start a Conversation
+        <svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

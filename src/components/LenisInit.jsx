@@ -9,10 +9,10 @@ export default function LenisInit() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       lerp: 0.1,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
+      touchMultiplier: 2.2, // Increased for smoother/faster mobile scroll
       normalizeWheel: true,
       smoothWheel: true,
-      smoothTouch: false
+      smoothTouch: true // Enable smooth scroll on touch devices
     });
 
     // Animation frame loop

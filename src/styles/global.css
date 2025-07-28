@@ -917,7 +917,6 @@ a:active {
   /* Reduce animation complexity on mobile */
   .animate-gradient {
     animation: none;
-    background: var(--primary);
   }
   
   .animate-breathe {

@@ -37,23 +37,24 @@ import profile from '../assests/profile.jpeg';
           src={profile}
           alt="Manpreet Gill"
           class="relative w-36 h-36 rounded-full shadow-2xl object-cover border-4 border-primary ring-4 ring-primary/20 group-hover:scale-105 group-hover:border-accent transition-all duration-500 hover-lift"
-          loading="lazy"
+          loading="eager"
+          priority
         />
       </div>
     </div>
     
     <!-- Name with animated gradient -->
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg animate-gradient bg-[length:200%_auto]">
+    <h1 class="text-heading-1 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg animate-gradient bg-[length:200%_auto] gpu-accelerated">
       Manpreet Gill
     </h1>
     
     <!-- Tagline -->
-    <p class="text-2xl md:text-3xl text-primary font-semibold mb-8 max-w-4xl mx-auto leading-tight px-4">
+    <p class="text-heading-5 text-primary font-semibold mb-8 max-w-4xl mx-auto px-4 gpu-accelerated">
       Developer driven by deep curiosity for how software works and passion for building elegant, user-focused solutions
     </p>
     
     <!-- Description -->
-    <p class="max-w-3xl text-lg md:text-xl text-muted-foreground mb-12 mx-auto leading-relaxed px-4">
+    <p class="max-w-3xl text-body-large text-muted-foreground mb-12 mx-auto px-4 gpu-accelerated">
       I believe in <span class="font-semibold text-primary bg-primary/15 px-3 py-1 rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors duration-300">learning by doing</span> — tackling complex, real-world projects from day one. Every challenge is an opportunity to grow, experiment, and create meaningful impact through code.
     </p>
     

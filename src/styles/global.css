@@ -133,10 +133,39 @@
   --hover-overlay: oklch(0.12 0.008 256 / 0.05);
   --focus-ring: oklch(0.55 0.22 270 / 0.3);
   
-  /* Typography */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: Georgia, Cambria, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  /* Enhanced Typography System */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Typography Scale - Mobile First */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 2.75rem);
+  --text-5xl: clamp(2.75rem, 2.3rem + 2.25vw, 3.5rem);
+  --text-6xl: clamp(3.5rem, 2.8rem + 3.5vw, 4.5rem);
+  --text-7xl: clamp(4.5rem, 3.5rem + 5vw, 6rem);
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
   
   /* Radius and spacing */
   --radius: 0.75rem;
@@ -792,6 +821,226 @@ a:active {
   transform: translateX(-50%) translateY(-4px);
 }
 
+/* Typography Utility Classes */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.text-heading-1 {
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.text-heading-2 {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-heading-3 {
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-heading-4 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-heading-5 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-heading-6 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-body-large {
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-body {
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-body-small {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-caption {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* Mobile Performance Optimizations */
+/* Critical rendering path optimizations */
+.critical-font {
+  font-display: swap;
+}
+
+/* Hardware acceleration for animations */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Optimized animations for mobile */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .animate-gradient {
+    animation: none;
+    background: var(--primary);
+  }
+  
+  .animate-breathe {
+    animation-duration: 6s;
+  }
+  
+  .animate-float,
+  .animate-float-delayed {
+    animation-duration: 8s;
+  }
+  
+  /* Simplify glassmorphism on mobile for better performance */
+  .glassmorphism {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glassmorphism {
+    background: rgba(36, 36, 36, 0.3);
+  }
+  
+  /* Optimize parallax for mobile */
+  .parallax-bg {
+    transform: none !important;
+    position: static;
+  }
+  
+  .parallax-particle {
+    display: none;
+  }
+  
+  /* Reduce shadow complexity */
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Optimize button hover effects */
+  .premium-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .morph-button::before {
+    display: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .glassmorphism-hover:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: none;
+  }
+  
+  .dark .glassmorphism-hover:hover {
+    background: rgba(36, 36, 36, 0.25);
+  }
+  
+  /* Optimize button interactions for touch */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  button:active,
+  a:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders on high DPI displays */
+  .glassmorphism {
+    border-width: 0.5px;
+  }
+}
+
+/* Container queries for responsive typography */
+@container (max-width: 640px) {
+  .text-heading-1 {
+    font-size: var(--text-5xl);
+  }
+  
+  .text-heading-2 {
+    font-size: var(--text-4xl);
+  }
+  
+  .text-heading-3 {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Performance monitoring */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Critical CSS for font loading */
+@font-face {
+  font-family: 'system-ui-fallback';
+  src: local('system-ui'), local('-apple-system'), local('BlinkMacSystemFont');
+  font-display: swap;
+}
+
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -818,5 +1067,10 @@ a:active {
   .animate-float,
   .animate-float-delayed {
     animation: none !important;
+  }
+  
+  .will-change-transform,
+  .will-change-opacity {
+    will-change: auto !important;
   }
 }

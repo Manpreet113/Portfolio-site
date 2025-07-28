@@ -4,7 +4,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:analyze": "astro build --mode analyze",
+    "lighthouse": "npx lighthouse http://localhost:4321 --only-categories=performance --chrome-flags='--headless' --output=json --output-path=./lighthouse-performance.json",
+    "perf:test": "npm run build && npm run preview & sleep 5 && npm run lighthouse"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",

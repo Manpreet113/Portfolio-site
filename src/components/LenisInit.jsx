@@ -1,30 +1,62 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 
 export default function LenisInit() {
+  const rafIdRef = useRef();
+  const lenisRef = useRef();
+  
   useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      lerp: 0.1,
-      wheelMultiplier: 1,
-      touchMultiplier: 2.2, // Increased for smoother/faster mobile scroll
-      normalizeWheel: true,
-      smoothWheel: true,
-      smoothTouch: true // Enable smooth scroll on touch devices
-    });
-
-    // Animation frame loop
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      return; // Don't initialize smooth scrolling if user prefers reduced motion
     }
-    requestAnimationFrame(raf);
+    
+    // Delay initialization to avoid blocking main thread during initial page load
+    const timeoutId = setTimeout(() => {
+      // Initialize Lenis with optimized settings for better performance
+      lenisRef.current = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        lerp: 0.07, // Reduced for less CPU usage
+        wheelMultiplier: 0.8, // Reduced for less aggressive scrolling
+        touchMultiplier: 1.8,
+        normalizeWheel: true,
+        smoothWheel: true,
+        smoothTouch: false, // Disable on touch for better performance on mobile
+        syncTouch: false // Better mobile performance
+      });
+
+      // Optimized animation frame loop with throttling
+      let lastTime = 0;
+      const targetFPS = 60;
+      const frameInterval = 1000 / targetFPS;
+      
+      function raf(time) {
+        if (!lenisRef.current) return;
+        
+        // Throttle to target FPS to reduce CPU usage
+        if (time - lastTime >= frameInterval) {
+          lenisRef.current.raf(time);
+          lastTime = time;
+        }
+        
+        rafIdRef.current = requestAnimationFrame(raf);
+      }
+      
+      rafIdRef.current = requestAnimationFrame(raf);
+    }, 100); // Delay initialization by 100ms
 
     // Cleanup function
     return () => {
-      lenis.destroy();
+      clearTimeout(timeoutId);
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+      }
     };
   }, []);
 

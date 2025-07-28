@@ -1,34 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function DarkModeToggle() {
   const [dark, setDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   // On mount, set initial state from localStorage or system preference
-useEffect(() => {
-  const rootElement = document.documentElement;
-  const saved = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDark = saved ? saved === "dark" : prefersDark;
-  setDark(isDark);
-  rootElement.classList.toggle("dark", isDark);
-}, []);
-
-  // When dark changes, update html class and localStorage
   useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+    const rootElement = document.documentElement;
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved ? saved === "dark" : prefersDark;
+    
+    setDark(isDark);
+    setMounted(true);
+    
+    // Avoid unnecessary DOM manipulation if class already matches
+    if (isDark !== rootElement.classList.contains("dark")) {
+      rootElement.classList.toggle("dark", isDark);
     }
-  }, [dark]);
+  }, []);
+
+  // Memoized toggle function to avoid recreating on every render
+  const toggleTheme = useCallback(() => {
+    setDark(prevDark => {
+      const newDark = !prevDark;
+      
+      // Use requestAnimationFrame to defer DOM manipulation
+      requestAnimationFrame(() => {
+        if (newDark) {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        }
+      });
+      
+      return newDark;
+    });
+  }, []);
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <div className="p-3 rounded-xl bg-muted/30 border border-border/30 w-11 h-11" />
+    );
+  }
 
   return (
     <button
       aria-label="Toggle dark mode"
       className="group relative p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-border transition-all duration-300 hover:scale-105 hover:shadow-md premium-hover magnetic"
-      onClick={() => setDark((d) => !d)}
+      onClick={toggleTheme}
     >
       {/* Background glow effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

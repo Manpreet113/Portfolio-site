@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-import Navbar from '../components/Navbar.jsx';
-import LenisInit from '../components/LenisInit.jsx';
+import { NavBar } from '../components/Navbar.jsx';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -28,8 +27,7 @@ import LenisInit from '../components/LenisInit.jsx';
     </script>
   </head>
   <body class="bg-background text-foreground font-sans shadow-none min-h-screen">
-    <Navbar client:load />
-    <LenisInit client:load />
+    <NavBar client:load />
     <main>
       <slot />
     </main>

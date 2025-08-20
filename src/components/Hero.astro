@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import profile from '../assests/profile.jpeg';
 ---
 
-<section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden bg-gradient-to-br from-surface-1 via-background to-surface-2 animate-fade-in">
+<section id="hero" class=" pt-36 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden bg-gradient-to-br from-surface-1 via-background to-surface-2 animate-fade-in">
   <!-- Enhanced background decorative elements -->
   <div class="absolute inset-0 overflow-hidden">
     <!-- Multi-layer parallax background blobs -->
@@ -28,20 +26,6 @@ import profile from '../assests/profile.jpeg';
   
   <!-- Hero Content Wrapper -->
   <div class="hero-content relative z-10 reveal-stagger">
-    <!-- Profile Image -->
-    <div class="relative mb-8 group flex justify-center">
-      <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-full blur-xl opacity-50 group-hover:opacity-75 group-hover:scale-110 transition-all duration-500"></div>
-        <div class="absolute -inset-2 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-60 group-hover:opacity-90 transition-all duration-300"></div>
-        <Image
-          src={profile}
-          alt="Manpreet Gill"
-          class="relative w-36 h-36 rounded-full shadow-2xl object-cover border-4 border-primary ring-4 ring-primary/20 group-hover:scale-105 group-hover:border-accent transition-all duration-500 hover-lift"
-          loading="eager"
-          priority
-        />
-      </div>
-    </div>
     
     <!-- Name with animated gradient -->
     <h1 class="text-heading-1 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg bg-[length:200%_auto] gpu-accelerated">

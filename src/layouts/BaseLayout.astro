@@ -21,10 +21,6 @@ import { NavBar } from '../components/Navbar.jsx';
         }
       })();
     </script>
-    <script>
-      // Performance optimizations - load after critical content
-      import { initPerformanceOptimizations } from '../scripts/performance-observer.js';
-    </script>
   </head>
   <body class="bg-background text-foreground font-sans shadow-none min-h-screen">
     <NavBar client:load />

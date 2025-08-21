@@ -1,8 +1,9 @@
 ---
 import { Spotlight } from "../components/ui/spotlight";
+import { GreetWords } from "./ui/hello";
 ---
 
-<section id="hero" class=" pt-36 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden animate-fade-in">
+<section id="hero" class="pt-36 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden animate-fade-in">
 
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
@@ -28,6 +29,8 @@ import { Spotlight } from "../components/ui/spotlight";
   
   <!-- Hero Content Wrapper -->
   <div class="hero-content relative z-10 reveal-stagger">
+
+    <GreetWords words={["Hello", "Hola", "नमस्ते"]} className="text-heading-1" client:load/>
     
     <!-- Name with animated gradient -->
     <h1 class="text-heading-1 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg bg-[length:200%_auto] gpu-accelerated">

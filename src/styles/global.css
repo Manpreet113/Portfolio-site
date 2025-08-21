@@ -1,3 +1,36 @@
+/* FONTS */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Glassmorphism styling for the navigation bar */
 .glassmorphism-nav {
   background: rgba(255, 255, 255, 0.1);
@@ -96,35 +129,35 @@
 :root {
   /* Base colors with better contrast */
   --background: oklch(1.0000 0 0);
-  --foreground: oklch(0.1766 0.0103 294.4898);
+  --foreground: oklch(0.2101 0.0318 264.6645);
   --card: oklch(1.0000 0 0);
-  --card-foreground: oklch(0.1766 0.0103 294.4898);
+  --card-foreground: oklch(0.2101 0.0318 264.6645);
 
   /* Primary colors - more vibrant and consistent */
-  --primary: oklch(0.5973 0.2237 279.7690);
+  --primary: oklch(0.5461 0.2152 262.8809);
   --primary-foreground: oklch(1.0000 0 0);
   --primary-muted: oklch(0.55 0.15 270);
 
   /* Secondary colors with better balance */
-  --secondary: oklch(0.9684 0.0160 289.9346);
-  --secondary-foreground: oklch(0.3922 0.1169 286.7080);
+  --secondary: oklch(0.9670 0.0029 264.5419);
+  --secondary-foreground: oklch(0.2101 0.0318 264.6645);
 
   /* Accent colors that work well in both themes */
-  --accent: oklch(0.9684 0.0160 289.9346);
-  --accent-foreground: oklch(0.3922 0.1169 286.7080);
+  --accent: oklch(0.9670 0.0029 264.5419);
+  --accent-foreground: oklch(0.2101 0.0318 264.6645);
 
   /* Muted colors with proper contrast */
-  --muted: oklch(0.9684 0.0160 289.9346);
-  --muted-foreground: oklch(0.5343 0.0282 295.6136);
+  --muted: oklch(0.9670 0.0029 264.5419);
+  --muted-foreground: oklch(0.4461 0.0263 256.8018);
 
   /* Text hierarchy colors */
   --text-subtle: oklch(0.50 0.010 256);
   --text-strong: oklch(0.12 0.008 256);
 
   /* Borders and inputs */
-  --border: oklch(0.9302 0.0068 295.4446);
+  --border: oklch(0.9276 0.0058 264.5313);
   --border-strong: oklch(0.85 0.008 240);
-  --input: oklch(0.9302 0.0068 295.4446);
+  --input: oklch(0.9276 0.0058 264.5313);
 
   /* Surface colors for layering */
   --surface-1: oklch(0.98 0.002 106);
@@ -136,8 +169,8 @@
   --focus-ring: oklch(0.55 0.22 270 / 0.3);
 
   /* Enhanced Typography System */
-  --font-sans: Figtree;
-  --font-serif: Lora;
+  --font-sans: JetBrains Mono;
+  --font-serif: serif;
   --font-mono: JetBrains Mono;
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -188,22 +221,22 @@
   --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--primary));
   --gradient-surface: linear-gradient(135deg, var(--surface-1), var(--surface-2));
   --popover: oklch(1.0000 0 0);
-  --popover-foreground: oklch(0.1766 0.0103 294.4898);
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --ring: oklch(0.7826 0.1157 286.1857);
-  --chart-1: oklch(0.6659 0.1743 284.7478);
-  --chart-2: oklch(0.7400 0.1284 285.8534);
-  --chart-3: oklch(0.8134 0.0854 287.3394);
-  --chart-4: oklch(0.8876 0.0437 288.3407);
-  --chart-5: oklch(0.9620 0.0040 286.3246);
-  --sidebar: oklch(0.9924 0.0028 308.4292);
-  --sidebar-foreground: oklch(0.5343 0.0282 295.6136);
-  --sidebar-primary: oklch(0.5973 0.2237 279.7690);
+  --popover-foreground: oklch(0.2101 0.0318 264.6645);
+  --destructive: oklch(0.5771 0.2152 27.3250);
+  --ring: oklch(0.7137 0.1434 254.6240);
+  --chart-1: oklch(0.5461 0.2152 262.8809);
+  --chart-2: oklch(0.6231 0.1880 259.8145);
+  --chart-3: oklch(0.7137 0.1434 254.6240);
+  --chart-4: oklch(0.8091 0.0956 251.8128);
+  --chart-5: oklch(0.8823 0.0571 254.1284);
+  --sidebar: oklch(0.9846 0.0017 247.8389);
+  --sidebar-foreground: oklch(0.4461 0.0263 256.8018);
+  --sidebar-primary: oklch(0.5461 0.2152 262.8809);
   --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.9684 0.0160 289.9346);
-  --sidebar-accent-foreground: oklch(0.3922 0.1169 286.7080);
-  --sidebar-border: oklch(0.9302 0.0068 295.4446);
-  --sidebar-ring: oklch(0.7826 0.1157 286.1857);
+  --sidebar-accent: oklch(0.9670 0.0029 264.5419);
+  --sidebar-accent-foreground: oklch(0.2101 0.0318 264.6645);
+  --sidebar-border: oklch(0.9276 0.0058 264.5313);
+  --sidebar-ring: oklch(0.7137 0.1434 254.6240);
   --destructive-foreground: oklch(1.0000 0 0);
   --shadow-color: #000000;
   --shadow-opacity: 0.05;
@@ -219,36 +252,36 @@
 
 .dark {
   /* Base colors with better contrast for dark theme */
-  --background: oklch(0.1766 0.0103 294.4898);
-  --foreground: oklch(0.9794 0.0013 286.3756);
-  --card: oklch(0.1991 0.0100 294.6446);
-  --card-foreground: oklch(0.9794 0.0013 286.3756);
+  --background: oklch(0.1296 0.0274 261.6924);
+  --foreground: oklch(0.9846 0.0017 247.8389);
+  --card: oklch(0.1654 0.0267 266.1989);
+  --card-foreground: oklch(0.9846 0.0017 247.8389);
 
   /* Primary colors optimized for dark theme */
-  --primary: oklch(0.6659 0.1743 284.7478);
-  --primary-foreground: oklch(0.1766 0.0103 294.4898);
+  --primary: oklch(0.6231 0.1880 259.8145);
+  --primary-foreground: oklch(1.0000 0 0);
   --primary-muted: oklch(0.60 0.15 280);
 
   /* Secondary colors with proper contrast */
-  --secondary: oklch(0.3284 0.0460 296.1386);
-  --secondary-foreground: oklch(0.9794 0.0013 286.3756);
+  --secondary: oklch(0.2781 0.0296 256.8480);
+  --secondary-foreground: oklch(0.9846 0.0017 247.8389);
 
   /* Accent colors that work well in dark theme */
-  --accent: oklch(0.3284 0.0460 296.1386);
-  --accent-foreground: oklch(0.9794 0.0013 286.3756);
+  --accent: oklch(0.2781 0.0296 256.8480);
+  --accent-foreground: oklch(0.9846 0.0017 247.8389);
 
   /* Muted colors with proper contrast */
-  --muted: oklch(0.2933 0.0219 296.4797);
-  --muted-foreground: oklch(0.7026 0.0190 296.4753);
+  --muted: oklch(0.2101 0.0318 264.6645);
+  --muted-foreground: oklch(0.7137 0.0192 261.3246);
 
   /* Text hierarchy colors for dark theme */
   --text-subtle: oklch(0.60 0.010 240);
   --text-strong: oklch(0.95 0.003 240);
 
   /* Borders and inputs */
-  --border: oklch(0.2933 0.0219 296.4797);
+  --border: oklch(0.2781 0.0296 256.8480);
   --border-strong: oklch(0.30 0.010 240);
-  --input: oklch(0.2933 0.0219 296.4797);
+  --input: oklch(0.2781 0.0296 256.8480);
 
   /* Surface colors for layering */
   --surface-1: oklch(0.14 0.005 240);
@@ -260,38 +293,38 @@
   --focus-ring: oklch(0.70 0.20 280 / 0.4);
 
   /* Enhanced shadows with better visibility for dark theme */
-  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 100% / 0.10);
+  --shadow: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 100% / 0.10);
+  --shadow-md: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 100% / 0.10);
+  --shadow-lg: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 100% / 0.10);
+  --shadow-xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 100% / 0.10);
   --shadow-2xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.25);
 
   /* Gradient stops for dark theme */
   --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
   --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--primary));
   --gradient-surface: linear-gradient(135deg, var(--surface-1), var(--surface-2));
-  --popover: oklch(0.1991 0.0100 294.6446);
-  --popover-foreground: oklch(0.9794 0.0013 286.3756);
+  --popover: oklch(0.1654 0.0267 266.1989);
+  --popover-foreground: oklch(0.9846 0.0017 247.8389);
   --destructive: oklch(0.3958 0.1331 25.7230);
-  --ring: oklch(0.6659 0.1743 284.7478);
-  --chart-1: oklch(0.6659 0.1743 284.7478);
-  --chart-2: oklch(0.7400 0.1284 285.8534);
-  --chart-3: oklch(0.8134 0.0854 287.3394);
-  --chart-4: oklch(0.8876 0.0437 288.3407);
-  --chart-5: oklch(0.9620 0.0040 286.3246);
-  --sidebar: oklch(0.1991 0.0100 294.6446);
-  --sidebar-foreground: oklch(0.7026 0.0190 296.4753);
-  --sidebar-primary: oklch(0.6659 0.1743 284.7478);
-  --sidebar-primary-foreground: oklch(0.1766 0.0103 294.4898);
-  --sidebar-accent: oklch(0.3284 0.0460 296.1386);
-  --sidebar-accent-foreground: oklch(0.9794 0.0013 286.3756);
-  --sidebar-border: oklch(0.2933 0.0219 296.4797);
-  --sidebar-ring: oklch(0.6659 0.1743 284.7478);
-  --destructive-foreground: oklch(0.9794 0.0013 286.3756);
+  --ring: oklch(0.6231 0.1880 259.8145);
+  --chart-1: oklch(0.6231 0.1880 259.8145);
+  --chart-2: oklch(0.7137 0.1434 254.6240);
+  --chart-3: oklch(0.8091 0.0956 251.8128);
+  --chart-4: oklch(0.8823 0.0571 254.1284);
+  --chart-5: oklch(0.9319 0.0316 255.5855);
+  --sidebar: oklch(0.1654 0.0267 266.1989);
+  --sidebar-foreground: oklch(0.7137 0.0192 261.3246);
+  --sidebar-primary: oklch(0.6231 0.1880 259.8145);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.2781 0.0296 256.8480);
+  --sidebar-accent-foreground: oklch(0.9846 0.0017 247.8389);
+  --sidebar-border: oklch(0.2781 0.0296 256.8480);
+  --sidebar-ring: oklch(0.6231 0.1880 259.8145);
+  --destructive-foreground: oklch(0.9846 0.0017 247.8389);
   --radius: 0.5rem;
-  --font-sans: Figtree;
-  --font-serif: Lora;
+  --font-sans: JetBrains Mono;
+  --font-serif: serif;
   --font-mono: JetBrains Mono;
   --shadow-color: #000000;
   --shadow-opacity: 0.1;
@@ -340,9 +373,9 @@
   --color-focus-ring: var(--focus-ring);
 
   /* Typography */
-  --font-sans: Figtree;
+  --font-sans: JetBrains Mono;
   --font-mono: JetBrains Mono;
-  --font-serif: Lora;
+  --font-serif: serif;
 
   /* Radius system */
   --radius-sm: var(--radius-sm);

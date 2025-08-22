@@ -32,7 +32,6 @@ export const Navbar = ({
   return (
     <motion.div
       ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("sticky inset-x-0 top-2 z-40 w-full", className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -123,7 +122,7 @@ export const MobileNav = ({
         width: visible ? "90%" : "100%",
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
+        borderRadius: visible ? "40px" : "2rem",
         y: visible ? 20 : 0,
       }}
       transition={{

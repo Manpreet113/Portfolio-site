@@ -1,7 +1,9 @@
-"use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import GraphemeSplitter from "grapheme-splitter";
+
+
 
 export const GreetWords = ({
   words,
@@ -10,8 +12,8 @@ export const GreetWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const splitter = new GraphemeSplitter();
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -24,6 +26,8 @@ export const GreetWords = ({
         startAnimation();
       }, duration);
   }, [isAnimating, duration, startAnimation]);
+
+  const letters = splitter.splitGraphemes(currentWord);
 
   return (
     <AnimatePresence
@@ -67,7 +71,7 @@ export const GreetWords = ({
               duration: 0.2,
             }}
             className="inline-block whitespace-nowrap">
-            {word.split("").map((letter, letterIndex) => (
+            {letters.map((letter, letterIndex) => (
               <motion.span
                 key={word + letterIndex}
                 initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}

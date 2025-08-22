@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { NavBar } from '../components/Navbar.jsx';
+import { Spotlight } from '../components/ui/spotlight.jsx';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -24,6 +25,7 @@ import { NavBar } from '../components/Navbar.jsx';
   </head>
   <body class="bg-background text-foreground font-sans shadow-none min-h-screen">
     <NavBar client:load />
+    <Spotlight client:load />
     <main>
       <slot />
     </main>

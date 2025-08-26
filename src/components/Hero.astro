@@ -6,7 +6,7 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
 
 <section
   id="hero"
-  class="pt-36 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden animate-fade-in"
+  class="pt-6 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center overflow-hidden animate-fade-in"
 >
   <!-- Parallax particles with proper classes -->
   <div class="absolute top-20 left-20">
@@ -40,21 +40,20 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
 
   <!-- Hero Content Wrapper -->
   <div class="hero-content relative z-10 reveal-stagger">
-    <GreetWords words={words} className="text-heading-1" client:load />
+    <GreetWords words={words} className="text-heading-2" client:load />
 
     <!-- Name with animated gradient -->
     <h1
-      class="text-heading-1 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg bg-[length:200%_auto] gpu-accelerated"
+      class="text-heading-2 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg bg-[length:200%_auto] gpu-accelerated"
     >
      I am Manpreet,
     </h1>
 
     <!-- Tagline -->
     <p
-      class="text-heading-5 text-primary font-semibold mb-8 max-w-4xl mx-auto px-4 gpu-accelerated"
+      class="text-heading-5 text-primary font-semibold mb-8 max-w-4xl mx-auto px-4 gpu-accelerated "
     >
-      A front-end developer driven by deep curiosity for how software works and passion for
-      building elegant, user-focused solutions
+      A front-end developer driven by deep curiosity for how software works and passion for building elegant, user-focused solutions
     </p>
 
     <!-- Description -->

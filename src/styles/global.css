@@ -1159,12 +1159,6 @@ a:active {
     background: rgba(36, 36, 36, 0.25);
   }
 
-  /* Optimize button interactions for touch */
-  button,
-  a {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
 
   button:active,
   a:active {
@@ -1173,13 +1167,6 @@ a:active {
   }
 }
 
-/* High DPI display optimizations */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Sharper borders on high DPI displays */
-  .glassmorphism {
-    border-width: 0.5px;
-  }
-}
 
 /* Container queries for responsive typography */
 @container (max-width: 640px) {

@@ -16,7 +16,7 @@ export const Spotlight = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="pointer-events-none absolute inset-0 h-full w-full overflow-x-hidden"
+      className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden"
     >
       {/* Right spotlight only */}
       <motion.div

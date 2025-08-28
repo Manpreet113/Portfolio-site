@@ -464,26 +464,6 @@
   --color-destructive-foreground: var(--destructive-foreground);
 }
 
-::-webkit-scrollbar {
-  width: 1em;
-}
-
-::-webkit-scrollbar-track{
-  border-radius: 8px;
-  border: 2px solid var(--primary);
-  margin-block: 1vh ;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 8px;
-  border: 2px solid var(--muted);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
 /* Animation keyframes */
 @keyframes fade-in {
   from {

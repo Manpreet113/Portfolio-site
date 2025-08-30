@@ -59,7 +59,7 @@ export function CursorFollower() {
       
       {/* Cursor trail effect */}
       <div
-        className={`fixed pointer-events-none z-30 w-6 h-6 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-sm transition-all duration-500 ease-out ${
+        className={`fixed pointer-events-none z-30 w-6 h-6 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full transition-all duration-500 ease-out ${
           isHidden ? 'opacity-0 scale-0' : 'opacity-60'
         } ${
           isPointer ? 'scale-200' : 'scale-100'

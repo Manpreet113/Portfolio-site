@@ -43,18 +43,18 @@ export default function DarkModeToggle() {
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <div className="p-3 rounded-xl bg-muted/30 border border-border/30 w-11 h-11" />
+      <div className="p-3 rounded-full bg-muted/30 border border-border/30 w-11 h-11" />
     );
   }
 
   return (
     <button
       aria-label="Toggle dark mode"
-      className="group relative p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-border transition-all duration-300 hover:scale-105 hover:shadow-md premium-hover magnetic"
+      className="group relative p-3 rounded-full bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-border transition-all duration-300 hover:scale-105 hover:shadow-md premium-hover magnetic"
       onClick={toggleTheme}
     >
       {/* Background glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Icon container with rotation animation */}
       <div className="relative w-5 h-5 transition-transform duration-500 ease-out">

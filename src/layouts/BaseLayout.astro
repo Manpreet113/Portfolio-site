@@ -25,10 +25,10 @@ import { Spotlight } from '../components/ui/spotlight.jsx';
       })();
     </script>
   </head>
-  <body class="bg-background text-foreground font-sans shadow-none min-h-screen">
+  <body class="bg-gradient-to-b from-background via-background to-muted/20 text-foreground font-sans shadow-none min-h-screen">
     <NavBar client:load />
     <Spotlight client:load />
-    <main>
+    <main class="page-container px-4 sm:px-6 lg:px-8">
       <slot />
     </main>
   </body>

@@ -9,26 +9,26 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
   class="pt-6 pb-20 md:pt-48 md:pb-32 flex flex-col items-start text-left overflow-hidden animate-fade-in relative"
 >
   <!-- Hero Content Wrapper -->
-  <div class="hero-content relative z-10 reveal-stagger max-w-4xl">
-    <GreetWords words={words} className="text-heading-2" client:load />
+  <div class="relative z-10 max-w-4xl">
+    <GreetWords words={words} className="text-4xl md:text-5xl font-bold mb-4" client:load />
 
     <h1
-      class="text-heading-2 mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent drop-shadow-lg bg-[length:200%_auto] gpu-accelerated"
+      class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent"
     >
       I am Manpreet,
     </h1>
 
     <p
-      class="text-heading-5 text-primary font-semibold mb-8 max-w-4xl px-4 gpu-accelerated"
+      class="text-xl md:text-2xl text-primary font-semibold mb-8 max-w-4xl px-4"
     >
       A front-end developer driven by deep curiosity for how software works and passion for building elegant, user-focused solutions.
     </p>
 
     <p
-      class="max-w-3xl text-body-large text-muted-foreground mb-12 px-4 gpu-accelerated"
+      class="max-w-3xl text-lg text-muted-foreground mb-12 px-4"
     >
       I believe in <span
-        class="font-semibold text-primary bg-primary/15 px-3 py-1 rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors duration-300"
+        class="font-semibold text-primary bg-primary/15 px-3 py-1 rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors"
         >learning by doing</span
       >, tackling complex, real-world projects from day one. Every challenge is
       an opportunity to grow, experiment, and create meaningful impact through code.
@@ -39,7 +39,7 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
       <div class="flex flex-col sm:flex-row gap-4 items-center">
         <a
           href="#projects"
-          class="group morph-button premium-hover relative inline-flex items-center px-8 py-4 glassmorphism-button text-black font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-lg tracking-wide overflow-hidden hover:scale-105"
+          class="group relative inline-flex items-center px-8 py-4 glassmorphism-button font-bold text-lg transition-all hover:scale-105"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-xl"
@@ -47,7 +47,7 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
           <span class="relative flex items-center">
             View Projects
             <svg
-              class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+              class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -62,11 +62,11 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
         </a>
         <a
           href="#contact"
-          class="group morph-button premium-hover inline-flex items-center px-8 py-4 glassmorphism glassmorphism-hover border border-primary/30 text-primary hover:text-primary-foreground font-semibold transition-all duration-300 text-lg tracking-wide hover:scale-105 hover:shadow-lg"
+          class="group inline-flex items-center px-8 py-4 glassmorphism glassmorphism-hover border border-primary/30 text-primary hover:text-primary-foreground font-semibold text-lg transition-all hover:scale-105"
         >
           <span class="mr-2">Let's Connect</span>
           <svg
-            class="w-5 h-5 group-hover:rotate-12 transition-transform duration-300"
+            class="w-5 h-5 group-hover:rotate-12 transition-transform"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -83,16 +83,16 @@ const words = ["Hoi", "Hello", "Hola", "नमस्ते", "Bonjour", "Nǐnhǎ
     </div>
   </div>
 
-  <!-- Enhanced scroll indicator -->
+  <!-- Scroll indicator -->
   <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator cursor-pointer group"
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group"
     onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})"
   >
     <div
-      class="relative p-3 rounded-full glassmorphism border border-primary/30 group-hover:border-primary/50 transition-all duration-300 hover:scale-110"
+      class="relative p-3 rounded-full glassmorphism border border-primary/30 group-hover:border-primary/50 transition-all hover:scale-110"
     >
       <svg
-        class="w-5 h-5 text-primary group-hover:text-accent transition-colors duration-300"
+        class="w-5 h-5 text-primary group-hover:text-accent transition-colors"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

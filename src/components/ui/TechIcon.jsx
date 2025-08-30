@@ -2,11 +2,11 @@ import * as TablerIcons from '@tabler/icons-react';
 
 const {
   IconBrandReact,
-  IconRocket,
+  IconBrandAstro,
   IconPalette,
   IconBrandNodejs,
   IconDatabase,
-  IconBrandLinux,
+  IconBrandUbuntu,
   IconTerminal,
   IconBrandGit,
   IconBrandVercel,
@@ -16,11 +16,11 @@ const {
 export const TechIcon = ({ tech, className = "w-6 h-6" }) => {
   const icons = {
     react: IconBrandReact,
-    astro: IconRocket,
+    astro: IconBrandAstro,
     tailwind: IconPalette,
     nodejs: IconBrandNodejs,
     supabase: IconDatabase,
-    linux: IconBrandLinux,
+    linux: IconBrandUbuntu,
     bash: IconTerminal,
     git: IconBrandGit,
     vercel: IconBrandVercel,

@@ -1,9 +1,9 @@
 import * as TablerIcons from '@tabler/icons-react';
 
 const {
-  IconBrandLinux,
+  IconBrandUbuntu,
   IconTerminal2,
-  IconRocket,
+  IconBrandAstro,
   IconNotes,
   IconEdit,
   IconBot,
@@ -26,7 +26,7 @@ const {
 export const ProjectIcon = ({ project, type = "main", className = "w-8 h-8" }) => {
   const projectIcons = {
     hyprl: {
-      main: IconBrandLinux,
+      main: IconBrandUbuntu,
       secondary: IconTerminal2,
       accent: IconDownload
     },
@@ -48,7 +48,7 @@ export const ProjectIcon = ({ project, type = "main", className = "w-8 h-8" }) =
     'Node.js': IconBrandNodejs,
     'Discord.js': IconBrandDiscord,
     'PWA': IconDeviceMobile,
-    'Linux': IconBrandLinux,
+    'Linux': IconBrandUbuntu,
     'Supabase': IconDatabase,
     'JavaScript': IconBrandJavascript,
     'Git': IconBrandGit,

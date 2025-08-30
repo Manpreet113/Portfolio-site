@@ -1,4 +1,5 @@
 ---
+import { TechIcon } from './ui/TechIcon.jsx';
 ---
 
 <section id="skills" class="py-20 md:py-32">
@@ -109,19 +110,112 @@
     </div>
     
     <!-- Technologies Showcase -->
-    <div class="bg-card rounded-3xl p-8 md:p-12 border border-primary/10">
-      <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary">Technologies & Tools</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <span class="px-4 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">React</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-accent to-secondary text-accent-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Astro</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-secondary to-primary text-secondary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Tailwind CSS</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Supabase</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-accent to-secondary text-accent-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Node.js</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-secondary to-primary text-secondary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Linux</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Bash</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-accent to-secondary text-accent-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Git</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-secondary to-primary text-secondary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Vercel</span>
-        <span class="px-4 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105">Discord.js</span>
+    <div class="glassmorphism rounded-3xl p-8 md:p-12 border border-primary/10 glassmorphism-hover group">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-primary mb-4">Technologies & Tools</h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-4"></div>
+        <p class="text-muted-foreground max-w-xl mx-auto">
+          The powerful stack I use to build modern, scalable applications
+        </p>
+      </div>
+      
+      <!-- Tech Stack Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <!-- React -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="react" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">React</span>
+        </div>
+        
+        <!-- Astro -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="astro" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Astro</span>
+        </div>
+        
+        <!-- Tailwind -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="tailwind" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Tailwind</span>
+        </div>
+        
+        <!-- Node.js -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="nodejs" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Node.js</span>
+        </div>
+        
+        <!-- Supabase -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="supabase" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Supabase</span>
+        </div>
+        
+        <!-- Linux -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="linux" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Linux</span>
+        </div>
+        
+        <!-- Bash -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="bash" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Bash</span>
+        </div>
+        
+        <!-- Git -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="git" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Git</span>
+        </div>
+        
+        <!-- Vercel -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-black to-gray-800 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="vercel" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Vercel</span>
+        </div>
+        
+        <!-- Discord.js -->
+        <div class="group/tech flex flex-col items-center p-4 rounded-2xl glassmorphism border border-primary/5 hover:border-primary/20 transition-all hover:scale-105 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white mb-3 group-hover/tech:scale-110 transition-transform">
+            <TechIcon tech="discord" className="w-6 h-6" client:load />
+          </div>
+          <span class="text-sm font-medium text-foreground group-hover/tech:text-primary transition-colors">Discord.js</span>
+        </div>
+      </div>
+      
+      <!-- Bottom Section -->
+      <div class="mt-12 pt-8 border-t border-primary/10 text-center">
+        <div class="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
+          <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span>Always Learning</span>
+          </div>
+          <div class="w-px h-4 bg-primary/20"></div>
+          <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+            <span>Latest Tech Trends</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

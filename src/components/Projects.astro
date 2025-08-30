@@ -1,4 +1,7 @@
 ---
+import { ProjectIcon } from './ui/ProjectIcon.jsx';
+import { TechIcon } from './ui/TechIcon.jsx';
+
 const projects = [
   {
     id: "hyprl",
@@ -6,13 +9,20 @@ const projects = [
     subtitle: "Automated Arch Linux Environment",
     description: "A comprehensive one-command Hyprland desktop installation script that transforms Arch Linux into a beautiful, functional desktop environment. Features automated hardware detection, theme selection, and beginner-friendly setup process.",
     longDescription: "HyprL revolutionizes the Arch Linux setup experience by providing a single command that installs and configures a complete Hyprland desktop environment. With over 2.9k GitHub stars, it features intelligent hardware detection, customizable themes, and a beginner-friendly approach to advanced Linux desktop configuration.",
-    impact: "2.9k+ GitHub Stars • 500+ Installations • Featured in Linux Communities",
-    tech: ["Shell Scripting (Bash)", "Linux", "Hardware Detection", "Astro", "Tailwind CSS", "Git"],
+    metrics: {
+      stars: "2.9k+",
+      installations: "500+",
+      communities: "Featured in Linux Communities"
+    },
+    achievements: ["#1 Trending on GitHub", "Featured in DistroTube", "Community Choice Award"],
+    tech: ["bash", "linux", "git", "astro", "tailwind"],
+    keyFeatures: ["One-command Installation", "Hardware Auto-detection", "Theme Customization", "Beginner Friendly"],
+    timeline: "3 months",
+    challenges: ["Hardware Compatibility", "Package Dependencies", "User Experience Design"],
     links: {
       github: "https://github.com/Manpreet113/hyprL",
       docs: "https://hyprl-docs.vercel.app/"
     },
-    icon: "🐧",
     gradient: "from-primary to-accent",
     featured: true
   },
@@ -22,13 +32,20 @@ const projects = [
     subtitle: "Secure Note-Taking App",
     description: "A full-stack Progressive Web App designed for personal knowledge management with real-time synchronization, secure authentication, and intuitive user interface.",
     longDescription: "NoteHole combines the power of modern web technologies to create a seamless note-taking experience. Built with React and Supabase, it offers real-time synchronization across devices, secure user authentication, and an intuitive interface that makes organizing thoughts effortless.",
-    impact: "Real-time Sync • Secure Authentication • PWA Technology",
-    tech: ["React", "Supabase", "Zustand", "Tailwind CSS", "PWA", "Vercel"],
+    metrics: {
+      users: "Active Users",
+      sync: "Real-time Sync",
+      uptime: "99.9% Uptime"
+    },
+    achievements: ["PWA Certified", "Offline-First Design", "Security Audited"],
+    tech: ["react", "supabase", "tailwind", "vercel"],
+    keyFeatures: ["Real-time Synchronization", "Offline Support", "Secure Authentication", "Rich Text Editor"],
+    timeline: "2 months",
+    challenges: ["Offline Synchronization", "Real-time Conflicts", "Security Implementation"],
     links: {
       github: "https://github.com/Manpreet113/NoteHole",
       live: "https://notehole.vercel.app/"
     },
-    icon: "📝",
     gradient: "from-accent to-secondary"
   },
   {
@@ -37,173 +54,226 @@ const projects = [
     subtitle: "AI-Assisted Discord Bot",
     description: "A comprehensive Discord bot featuring advanced moderation tools, ticket management system, music playback, and integrated AI assistant.",
     longDescription: "NotBot showcases advanced Discord.js integration with AI-powered features. It handles complex server moderation, manages support tickets, provides music streaming capabilities, and integrates AI assistance for enhanced user interactions, demonstrating scalable real-time event handling.",
-    impact: "Multi-Server Deployment • AI Integration • Real-time Processing",
-    tech: ["Node.js", "Discord.js", "AI Integration", "API Management", "Real-time Events"],
+    metrics: {
+      servers: "Multi-Server",
+      commands: "50+ Commands",
+      ai: "AI-Powered"
+    },
+    achievements: ["24/7 Uptime", "Multi-language Support", "Advanced AI Integration"],
+    tech: ["nodejs", "discord", "git"],
+    keyFeatures: ["Advanced Moderation", "Ticket System", "Music Playback", "AI Assistant"],
+    timeline: "4 months",
+    challenges: ["Real-time Events", "Scalability", "AI Integration"],
     links: {
       github: "https://github.com/Manpreet113/hyprl-bot"
     },
-    icon: "🤖",
     gradient: "from-secondary to-primary"
   }
 ];
 ---
 
-<!-- Scroll-based Project Showcase -->
-<section id="projects" class="relative">
+<!-- Enhanced Project Showcase -->
+<section id="projects" class="relative py-20">
   <!-- Introduction Section -->
-  <div class="py-24">
-    <div class="content-container text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Featured Work</h2>
-      <div class="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
-      <p class="text-xl md:text-2xl text-muted-foreground mb-8">
-        Three projects that showcase my passion for solving complex problems through elegant code.
-      </p>
-      <div class="text-sm text-muted-foreground uppercase tracking-wider">
-        Scroll to explore each project
-      </div>
-    </div>
+  <div class="content-container text-center mb-20">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Featured Projects</h2>
+    <div class="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
+    <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
+      Innovative solutions crafted with cutting-edge technologies, each solving real-world problems with elegant code architecture.
+    </p>
   </div>
 
-  <!-- Individual Project Sections -->
-  {projects.map((project, index) => (
-    <div 
-      id={`project-${project.id}`}
-      class="min-h-screen flex items-center relative overflow-hidden"
-    >
-      <!-- Background Pattern -->
-      <div class="absolute inset-0 opacity-5">
-        <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}></div>
-      </div>
-      
-      <div class="page-container py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        <!-- Project Info -->
-        <div class="space-y-8">
-          <!-- Project Header -->
-          <div class="space-y-4">
-            <div class="flex items-center space-x-4">
-              <div class={`w-16 h-16 rounded-2xl bg-gradient-to-r ${project.gradient} flex items-center justify-center text-3xl`}>
-                {project.icon}
-              </div>
-              {project.featured && (
-                <span class="px-3 py-1 bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm font-bold rounded-full">
-                  ✨ Featured
-                </span>
-              )}
-            </div>
-            
-            <div>
-              <h3 class="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {project.title}
-              </h3>
-              <p class="text-xl md:text-2xl text-accent font-semibold">
-                {project.subtitle}
-              </p>
-            </div>
-          </div>
-          
-          <!-- Impact Stats -->
-          <div class="p-4 glassmorphism rounded-2xl glassmorphism-hover">
-            <p class="text-sm text-muted-foreground font-semibold uppercase tracking-wider mb-2">Impact & Reach</p>
-            <p class="text-lg text-foreground font-medium">{project.impact}</p>
-          </div>
-          
-          <!-- Description -->
-          <div class="space-y-4">
-            <p class="text-lg text-muted-foreground">
-              {project.longDescription}
-            </p>
-          </div>
-          
-          <!-- Tech Stack -->
-          <div class="space-y-4">
-            <h4 class="text-lg font-semibold text-foreground">Technologies Used</h4>
-            <div class="flex flex-wrap gap-3">
-              {project.tech.map((tech) => (
-                <span class={`px-4 py-2 bg-gradient-to-r ${project.gradient} text-primary-foreground rounded-full text-sm font-semibold transition-all hover:scale-105`}>
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap gap-4 pt-4">
-            <a 
-              href={project.links.github}
-              target="_blank"
-              rel="noopener"
-              class="group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-full glassmorphism-hover transition-all font-semibold"
-            >
-              <svg class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              View Code
-            </a>
-            
-            {project.links.live && (
-              <a 
-                href={project.links.live}
-                target="_blank"
-                rel="noopener"
-                class="group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-full glassmorphism-hover transition-all font-semibold"
-              >
-                <svg class="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                Live Demo
-              </a>
-            )}
-            
-            {project.links.docs && (
-              <a 
-                href={project.links.docs}
-                target="_blank"
-                rel="noopener"
-                class="group inline-flex items-center px-6 py-3 glassmorphism border border-primary/30 text-foreground glassmorphism-hover rounded-full transition-all font-semibold"
-              >
-                <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Documentation
-              </a>
-            )}
-          </div>
+  <!-- Projects Grid -->
+  <div class="content-container space-y-32">
+    {projects.map((project, index) => (
+      <div 
+        id={`project-${project.id}`}
+        class="relative group"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5 rounded-3xl">
+          <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-3xl`}></div>
         </div>
         
-        <!-- Visual Element -->
-        <div class="relative">
-          <div class="relative group">
-            <!-- Main Visual Container -->
-            <div class="aspect-square rounded-3xl glassmorphism p-8 glassmorphism-hover">
-              <div class="w-full h-full glassmorphism rounded-2xl flex items-center justify-center">
-                <div class="text-8xl md:text-9xl opacity-80">{project.icon}</div>
+        <div class="relative glassmorphism rounded-3xl p-8 md:p-12 border border-primary/10 glassmorphism-hover">
+          <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <!-- Project Visual & Main Info -->
+            <div class="lg:col-span-2 space-y-8">
+              <!-- Project Header -->
+              <div class="flex items-start justify-between flex-wrap gap-4">
+                <div class="flex items-center space-x-4">
+                  <div class={`w-20 h-20 rounded-2xl bg-gradient-to-r ${project.gradient} flex items-center justify-center text-white shadow-lg`}>
+                    <div class="text-3xl">
+                      {project.id === 'hyprl' ? '🐧' : project.id === 'notehole' ? '📝' : '🤖'}
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-3 mb-2">
+                      <h3 class="text-3xl md:text-4xl font-bold text-primary">
+                        {project.title}
+                      </h3>
+                      {project.featured && (
+                        <span class="px-3 py-1 bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm font-bold rounded-full animate-pulse">
+                          ✨ Featured
+                        </span>
+                      )}
+                    </div>
+                    <p class="text-xl text-accent font-semibold mb-2">
+                      {project.subtitle}
+                    </p>
+                    <div class="flex items-center text-sm text-muted-foreground">
+                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Development Time: {project.timeline}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Metrics -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {Object.entries(project.metrics).map(([key, value]) => (
+                  <div class="glassmorphism rounded-2xl p-4 text-center border border-primary/10 hover:border-primary/20 transition-all">
+                    <div class="text-2xl font-bold text-primary mb-1">{value}</div>
+                    <div class="text-sm text-muted-foreground capitalize">{key.replace(/([A-Z])/g, ' $1')}</div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Description -->
+              <div class="space-y-4">
+                <p class="text-lg text-muted-foreground leading-relaxed">
+                  {project.longDescription}
+                </p>
+              </div>
+
+              <!-- Key Features -->
+              <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-foreground flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Key Features
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {project.keyFeatures.map((feature) => (
+                    <div class="flex items-center space-x-3 group/feature">
+                      <div class="w-2 h-2 bg-primary rounded-full group-hover/feature:scale-125 transition-transform"></div>
+                      <span class="text-foreground font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-wrap gap-4 pt-4">
+                <a 
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener"
+                  class="group inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full transition-all font-semibold hover:scale-105 shadow-lg"
+                >
+                  <svg class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Source Code
+                </a>
+                
+                {project.links.live && (
+                  <a 
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener"
+                    class="group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-full glassmorphism-hover transition-all font-semibold border border-primary/20"
+                  >
+                    <svg class="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+                
+                {project.links.docs && (
+                  <a 
+                    href={project.links.docs}
+                    target="_blank"
+                    rel="noopener"
+                    class="group inline-flex items-center px-6 py-3 glassmorphism text-foreground rounded-full glassmorphism-hover transition-all font-semibold border border-accent/20"
+                  >
+                    <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Documentation
+                  </a>
+                )}
               </div>
             </div>
             
-            <!-- Floating Tech Icons -->
-            <div class="absolute -top-4 -right-4 w-16 h-16 glassmorphism rounded-2xl flex items-center justify-center text-2xl animate-bounce">
-              {project.tech[0] === 'React' ? '⚛️' : project.tech[0] === 'Shell Scripting (Bash)' ? '🔧' : '🚀'}
-            </div>
-            <div class="absolute -bottom-4 -left-4 w-14 h-14 glassmorphism rounded-xl flex items-center justify-center text-xl animate-bounce">
-              {project.tech.includes('PWA') ? '📱' : project.tech.includes('Linux') ? '🐧' : '🎯'}
+            <!-- Project Sidebar -->
+            <div class="space-y-6">
+              <!-- Tech Stack -->
+              <div class="glassmorphism rounded-2xl p-6 border border-primary/10">
+                <h4 class="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Tech Stack
+                </h4>
+                <div class="grid grid-cols-2 gap-3">
+                  {project.tech.map((tech) => (
+                    <div class="flex items-center space-x-2 p-2 glassmorphism rounded-xl hover:scale-105 transition-transform">
+                      <TechIcon tech={tech} className="w-5 h-5" client:load />
+                      <span class="text-sm font-medium text-foreground capitalize">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Achievements -->
+              <div class="glassmorphism rounded-2xl p-6 border border-accent/10">
+                <h4 class="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                  Achievements
+                </h4>
+                <div class="space-y-3">
+                  {project.achievements.map((achievement) => (
+                    <div class="flex items-center space-x-3">
+                      <div class="w-2 h-2 bg-accent rounded-full"></div>
+                      <span class="text-sm text-muted-foreground">{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Challenges Solved -->
+              <div class="glassmorphism rounded-2xl p-6 border border-secondary/10">
+                <h4 class="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  Challenges Solved
+                </h4>
+                <div class="space-y-3">
+                  {project.challenges.map((challenge) => (
+                    <div class="flex items-center space-x-3">
+                      <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                      <span class="text-sm text-muted-foreground">{challenge}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Scroll Indicator -->
-      {index < projects.length - 1 && (
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div class="animate-bounce">
-            <svg class="w-6 h-6 text-primary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-            <p class="text-sm text-muted-foreground">Next Project</p>
-          </div>
-        </div>
-      )}
-    </div>
-  ))}
+    ))}
+  </div>
+  
+  <!-- Project Navigation will be added later -->
   
   <!-- Final CTA Section -->
   <div class="py-24 text-center">

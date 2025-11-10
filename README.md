@@ -2,7 +2,7 @@
 
 Just a protfolio website for me...
 
-Live [Here](https://manpreetgill.tech/).
+Live [Here](https://manpreet.tech/).
 
 ## 🛠️ Tech Stack
 
